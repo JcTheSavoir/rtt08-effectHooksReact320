@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { useState, useRef, useEffect } from "react";
+import VideoPlayer from "./components/VideoPlayer"
 function App() {
+  const [isPlaying, setIsPlaying] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <>
+        <button onClick={() => setIsPlaying(!isPlaying)}>
+          {isPlaying ? "Pause" : "Play"}
+        </button>
+        <VideoPlayer
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+          // replace "stock.mov" with a video file
+          src="file_example_MOV_480_700kB.mov"
+        />
+      </>
+
+
+
     </div>
   );
 }
