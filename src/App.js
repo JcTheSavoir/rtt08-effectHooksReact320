@@ -5,6 +5,7 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   return (
     <div className="App">
+      <h1>React useEffect Examples and Testing</h1>
       <>
         <button onClick={() => setIsPlaying(!isPlaying)}>
           {isPlaying ? "Pause" : "Play"}
